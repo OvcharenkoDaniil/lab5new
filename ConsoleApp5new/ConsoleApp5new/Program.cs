@@ -183,7 +183,40 @@ namespace lab5
             Console.WriteLine($"It is Interface: {a2.Field(4, 5)}");
             Console.WriteLine();
 
-            
+            Bars bar1 = new Bars("blue");
+            Console.WriteLine($"bar1 is Bars? {bar1 is Bars}");
+            bar1.ToString();
+            Mats mat1 = new Mats("yellow");
+            Console.WriteLine($"mat1 is Bars? {mat1 is Bars}");
+            Console.WriteLine($"mat1 is Mats? {mat1 is Mats}");
+            Bench bench1 = new Bench("red");
+            Console.WriteLine($"bench1 is Inventory? {bench1 is Inventory}");
+            Console.WriteLine($"bench1 is Bench? {bench1 is Bench}");
+            Console.WriteLine();
+
+            Mats mat2 = new Mats("gray");
+            Inventory a3 = mat2 as Inventory;
+            Console.WriteLine($"a3 is Inventory? {a3 is Inventory}");
+            Console.WriteLine($"a3 is Mats? {a3 is Mats}");
+            Console.WriteLine($"mat2 is Inventory? {mat2 is Inventory}");
+            Console.WriteLine($"mat2 is Mats? {mat2 is Mats}");
+            Console.WriteLine("Something about mat2");
+            Console.WriteLine(mat2.ToString());
+            Console.WriteLine("Something about a3");
+            Console.WriteLine(a3.ToString());
+            Console.WriteLine();
+
+            Inventory b1 = new Inventory();
+            Ball b2 = new Ball("white", 10);
+            BallOfBasket b3 = new BallOfBasket("green", 15);
+            ITennis[] arr = new ITennis[3];
+            arr[0] = b1;
+            arr[1] = b2;
+            arr[2] = b3;
+            foreach (ITennis x in arr)
+            {
+                Print.IAmPrinting(x);
+            }
 
             Console.ReadKey();
         }
