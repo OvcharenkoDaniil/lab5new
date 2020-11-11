@@ -112,13 +112,12 @@ namespace lab5
             return $"Kind: {Kind} \n Color: {color}";
         }
     }
-    
+   
     
     class Program
     {
         static void Main(string[] args)
         {
-            Tennis a1 = new Inventory();
             
             Console.ReadKey();
         }
