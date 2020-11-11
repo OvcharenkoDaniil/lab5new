@@ -157,7 +157,22 @@ namespace lab5
             return (int)tmp;
         }
     }
-    
+    class Print
+    {
+        public static string sport { get; set; }
+        public string color { get; set; }
+        public int radius { get; set; }
+        public Print(string color, int radius)
+        {
+            this.color = color;
+            this.radius = radius;
+            sport = "Basketball";
+        }
+        public static void IAmPrinting(ITennis obj)
+        {
+            Console.WriteLine(obj.ToString());
+        }
+    }
     class Program
     {
         static void Main(string[] args)
@@ -168,10 +183,7 @@ namespace lab5
             Console.WriteLine($"It is Interface: {a2.Field(4, 5)}");
             Console.WriteLine();
 
-            Bars bar1 = new Bars("blue");
-            Console.WriteLine($"bar1 is Bars? {bar1 is Bars}");
-            bar1.ToString();
-           
+            
 
             Console.ReadKey();
         }
