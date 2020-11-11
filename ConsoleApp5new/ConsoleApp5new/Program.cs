@@ -9,8 +9,9 @@ namespace lab5
     interface ITennis
     {
         int Field(int a, int b);
-        
+
     }
+    //первый уровень
     abstract class Tennis
     {
         public virtual int Field(int a, int b)
@@ -20,18 +21,20 @@ namespace lab5
             Console.Write("Area of field is ");
             return square;
         }
-        public string Kind {get; set;}
+        private string kind;
+        public string Kind { get; set; }
         public Tennis()
         {
             Kind = "Sport";
         }
         public abstract override string ToString();
     }
+    //второй уровень
     class Inventory : Tennis, ITennis
     {
         public Inventory() : base()
         {
-            Console.WriteLine("This is Inventory!");
+            Console.WriteLine("Inventory is the array of finished goods or goods used in production held by a company");
         }
         public override int Field(int a, int b)
         {
@@ -52,6 +55,7 @@ namespace lab5
         }
 
     }
+    //третий уровень
     class Bench : Inventory
     {
         public string color { get; set; }
@@ -112,13 +116,63 @@ namespace lab5
             return $"Kind: {Kind} \n Color: {color}";
         }
     }
-   
+    //четвертый уровень, закрытый
+    sealed class BallOfBasket : Ball
+    {
+        public static string sport { get; set; }
+        public BallOfBasket(string color, int radius) : base(color, radius)
+        {
+            this.color = color;
+            this.radius = radius;
+            sport = "Basketball";
+        }
+        public override double Volume()
+        {
+            double volume = 4 / 3 * pi * radius * radius * radius + 1.67;
+            return volume;
+        }
+        public override string ToString()
+        {
+            Console.WriteLine("Object is BallOfBasket");
+            return $"Kind: {Kind} \n Color: {color} \n Sport: {sport}";
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+            if (obj.GetType() != this.GetType())
+            {
+                return false;
+            }
+            BallOfBasket temp = (BallOfBasket)obj;
+            return temp.color == this.color && temp.radius == this.radius;
+        }
+
+        public override int GetHashCode()
+        {
+            double tmp = (Math.Pow((double)radius, (double)2)) + (Math.Pow((double)radius, (double)2)) + (Math.Pow((double)radius, (double)2)) * 1000;
+            return (int)tmp;
+        }
+    }
     
     class Program
     {
         static void Main(string[] args)
         {
-            
+            Tennis a1 = new Inventory();
+            ITennis a2 = new Inventory();
+            Console.WriteLine($"It is class'es method: {a1.Field(4, 5)}");
+            Console.WriteLine($"It is Interface: {a2.Field(4, 5)}");
+            Console.WriteLine();
+
+            Bars bar1 = new Bars("blue");
+            Console.WriteLine($"bar1 is Bars? {bar1 is Bars}");
+            bar1.ToString();
+           
+
             Console.ReadKey();
         }
     }
