@@ -1,0 +1,7 @@
+D:\ООП\Projects\лаб5new\ConsoleApp5new\ConsoleApp5new\bin\Debug\ConsoleApp5new.exe.config
+D:\ООП\Projects\лаб5new\ConsoleApp5new\ConsoleApp5new\bin\Debug\ConsoleApp5new.exe
+D:\ООП\Projects\лаб5new\ConsoleApp5new\ConsoleApp5new\bin\Debug\ConsoleApp5new.pdb
+D:\ООП\Projects\лаб5new\ConsoleApp5new\ConsoleApp5new\obj\Debug\ConsoleApp5new.csprojAssemblyReference.cache
+D:\ООП\Projects\лаб5new\ConsoleApp5new\ConsoleApp5new\obj\Debug\ConsoleApp5new.csproj.CoreCompileInputs.cache
+D:\ООП\Projects\лаб5new\ConsoleApp5new\ConsoleApp5new\obj\Debug\ConsoleApp5new.exe
+D:\ООП\Projects\лаб5new\ConsoleApp5new\ConsoleApp5new\obj\Debug\ConsoleApp5new.pdb
